@@ -169,7 +169,7 @@ function shop(sel) {
 	update_values(); 
 }
 
-function saveCookies() {
+/*function saveCookies() {
 	var exdays = 100000;
 	var date = new Date();
 	date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -203,17 +203,38 @@ function getCookie(cname) {
 }
 
 function loadCookies() {
-	score = Number(getCookie("score"));
-	grill = Number(getCookie("grill"));
-	chef = Number(getCookie("chef"));
-	trap = Number(getCookie("trap"));
-	cat = Number(getCookie("cat"));
-	poison = Number(getCookie("poison"));
-	catcher = Number(getCookie("catcher"));
-	factory = Number(getCookie("factory"));
-	planet = Number(getCookie("planet"));
-	jesus = Number(getCookie("jesus"));
+	if( getCookie("score") !== "" ) {
+		score = Number(getCookie("score"));
+	}
+	if( getCookie("grill") !== "" ) {
+		grill = Number(getCookie("grill"));
+	}
+	if( getCookie("chef") !== "" ) {
+		chef = Number(getCookie("chef"));
+	}
+	if( getCookie("trap") !== "" ) {
+		trap = Number(getCookie("trap"));
+	}
+	if( getCookie("cat") !== "" ) {
+		cat = Number(getCookie("cat"));
+	}
+	if( getCookie("poison") !== "" ) {
+		poison = Number(getCookie("poison"));
+	}
+	if( getCookie("catcher") !== "" ) {
+		catcher = Number(getCookie("catcher"));
+	}
+	if( getCookie("factory") !== "" ) {
+		factory = Number(getCookie("factory"));
+	}
+	if( getCookie("planet") !== "" ) {
+		planet = Number(getCookie("planet"));
+	}
+	if( getCookie("jesus") !== "" ) {
+		jesus = Number(getCookie("jesus"));
+	}
 }
+*/
 
 // dispense bonuses every second
 setInterval(bonus, 1000);
