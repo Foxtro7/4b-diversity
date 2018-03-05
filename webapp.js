@@ -84,6 +84,10 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
+		case "grillsell":
+			grill -= 1;
+			score += 50;
+			break;
 		case "chefbuy":
 			if(score >= 150) {
 				score-=150;
@@ -93,6 +97,10 @@ function shop(sel) {
 			else {
 				alert( "You don't have enough rats!");
 			}
+			break;
+		case "chefsell":
+			chef -= 1;
+			score += 75;
 			break;
 		case "trapbuy":
 			if(score >= 250) {
@@ -104,6 +112,10 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
+		case "trapsell":
+			trap -= 1;
+			score += 125;
+			break;
 		case "catbuy":
 			if(score >= 1000) {
 				score-=1000;
@@ -113,6 +125,10 @@ function shop(sel) {
 			else {
 				alert( "You don't have enough rats!");
 			}
+			break;
+		case "catsell":
+			cat -= 1;
+			score += 500;
 			break;
 		case "poisonbuy":
 			if(score >= 1500) {
@@ -124,6 +140,10 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
+		case "poisonsell":
+			poison -= 1;
+			score += 750;
+			break;
 		case "catcherbuy":
 			if(score >= 5000) {
 				score -= 5000;
@@ -134,6 +154,10 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
+		case "catchersell":
+			catcher -= 1;
+			score += 2500;
+			break;
 		case "factorybuy":
 			if(score >= 10000) {
 				score -= 10000;
@@ -143,6 +167,10 @@ function shop(sel) {
 			else {
 				alert( "You don't have enough rats!");
 			}
+			break;
+		case "factorysell":
+			factory -= 1;
+			score += 5000;
 			break;
 		case "planetbuy":
 			if(score >= 50000) {
@@ -155,6 +183,10 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
+		case "planetsell":
+			planet -= 1;
+			score += 25000;
+			break;
 		case "jesusbuy":
 			if(score >= 25000000) {
 			score -= 25000000;
@@ -164,6 +196,10 @@ function shop(sel) {
 			else {
 				alert( "You don't have enough rats!");
 			}
+			break;
+		case "jesussell":
+			jesus -= 1;
+			score += 12500000;
 			break;
 	}
 	update_values(); 
