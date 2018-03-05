@@ -169,7 +169,7 @@ function shop(sel) {
 	update_values(); 
 }
 
-/*function saveCookies() {
+function saveCookies() {
 	var exdays = 100000;
 	var date = new Date();
 	date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -234,7 +234,7 @@ function loadCookies() {
 		jesus = Number(getCookie("jesus"));
 	}
 }
-*/
+
 
 // dispense bonuses every second
 setInterval(bonus, 1000);
