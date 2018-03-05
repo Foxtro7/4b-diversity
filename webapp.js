@@ -16,32 +16,32 @@ window.onload = function() {
 	loadCookies();
 	update_values();
 	// add event listeners
-	document.getElementById("grillButton").addEventListener("click", function() {
-		shop("grill");
+	document.getElementById("grillbuyButton").addEventListener("click", function() {
+		shop("grillbuy");
 	});
-	document.getElementById("chefButton").addEventListener("click", function() {
-		shop("chef");
+	document.getElementById("chefbuyButton").addEventListener("click", function() {
+		shop("chefbuy");
 	});
-		document.getElementById("trapButton").addEventListener("click", function() {
-		shop("trap");
+		document.getElementById("trapbuyButton").addEventListener("click", function() {
+		shop("trapbuy");
 	});
-		document.getElementById("catsButton").addEventListener("click", function() {
-		shop("cat");
+		document.getElementById("catsbuyButton").addEventListener("click", function() {
+		shop("catbuy");
 	});
-		document.getElementById("poisonButton").addEventListener("click", function() {
-		shop("poison");
+		document.getElementById("poisonbuyButton").addEventListener("click", function() {
+		shop("poisonbuy");
 	});
-	document.getElementById("catcherButton").addEventListener("click", function() {
-		shop("catcher");
+	document.getElementById("catcherbuyButton").addEventListener("click", function() {
+		shop("catcherbuy");
 	});
-	document.getElementById("factoryButton").addEventListener("click", function() {
-		shop("factory");
+	document.getElementById("factorybuyButton").addEventListener("click", function() {
+		shop("factorybuy");
 	});
-	document.getElementById("planetButton").addEventListener("click", function() {
-		shop("planet");
+	document.getElementById("planetbuyButton").addEventListener("click", function() {
+		shop("planetbuy");
 	});
-	document.getElementById("jesusButton").addEventListener("click", function() {
-		shop("jesus");
+	document.getElementById("jesusbuyButton").addEventListener("click", function() {
+		shop("jesusbuy");
 	});
 	document.getElementById("reset").addEventListener("click", function() {
 		clear_score();
@@ -74,7 +74,7 @@ function cookie_clicker() {
 // for buying items
 function shop(sel) {
 	switch(sel) {
-		case "grill":
+		case "grillbuy":
 			if( score >= 100 ) {
 				score-=100;
 				grill++;
@@ -84,7 +84,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "chef":
+		case "chefbuy":
 			if(score >= 150) {
 				score-=150;
 				chef++;	
@@ -94,7 +94,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "trap":
+		case "trapbuy":
 			if(score >= 250) {
 				score-=250;
 				trap++;
@@ -104,7 +104,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "cat":
+		case "catbuy":
 			if(score >= 1000) {
 				score-=1000;
 				cat++;	
@@ -114,7 +114,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "poison":
+		case "poisonbuy":
 			if(score >= 1500) {
 				score-=1500;
 				poison++;	
@@ -124,7 +124,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "catcher":
+		case "catcherbuy":
 			if(score >= 5000) {
 				score -= 5000;
 				catcher++;
@@ -134,7 +134,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "factory":
+		case "factorybuy":
 			if(score >= 10000) {
 				score -= 10000;
 				factory++;	
@@ -144,7 +144,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "planet":
+		case "planetbuy":
 			if(score >= 50000) {
 				score -= 50000;
 				planet++;	
@@ -155,7 +155,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "jesus":
+		case "jesusbuy":
 			if(score >= 25000000) {
 			score -= 25000000;
 			jesus++;	
