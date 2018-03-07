@@ -43,6 +43,33 @@ window.onload = function() {
 	document.getElementById("jesusbuyButton").addEventListener("click", function() {
 		shop("jesusbuy");
 	});
+	document.getElementById("grillsellButton").addEventListener("click", function() {
+		shop("grillsell");
+	});
+	document.getElementById("chefsellButton").addEventListener("click", function() {
+		shop("chefsell");
+	});
+	document.getElementById("trapsellButton").addEventListener("click", function() {
+		shop("trapsell");
+	});
+	document.getElementById("catssellButton").addEventListener("click", function() {
+		shop("catssell");
+	});
+	document.getElementById("poisonsellButton").addEventListener("click", function() {
+		shop("poisonsell");
+	});
+	document.getElementById("catchersellButton").addEventListener("click", function() {
+		shop("catchersell");
+	});
+	document.getElementById("factorysellButton").addEventListener("click", function() {
+		shop("factorysell");
+	});
+	document.getElementById("planetsellButton").addEventListener("click", function() {
+		shop("planetsell");
+	});
+	document.getElementById("jesussellButton").addEventListener("click", function() {
+		shop("jesussell");
+	});
 	document.getElementById("reset").addEventListener("click", function() {
 		clear_score();
 	});
@@ -50,7 +77,7 @@ window.onload = function() {
 };
 
 function update_values() {
-	document.getElementById("score").value=score;        
+	document.getElementById("score").value=score;
 	document.getElementById("grill").value=grill;   
 	document.getElementById("chef").value=chef;  
 	document.getElementById("trap").value=trap;     
@@ -85,8 +112,10 @@ function shop(sel) {
 			}
 			break;
 		case "grillsell":
-			grill -= 1;
-			score += 50;
+			if(grill >= 1){
+				grill -= 1;
+				score += 50;
+			}
 			break;
 		case "chefbuy":
 			if(score >= 150) {
@@ -99,8 +128,10 @@ function shop(sel) {
 			}
 			break;
 		case "chefsell":
-			chef -= 1;
-			score += 75;
+			if(chef >= 1){
+				chef -= 1;
+				score += 75;
+			}
 			break;
 		case "trapbuy":
 			if(score >= 250) {
@@ -113,8 +144,10 @@ function shop(sel) {
 			}
 			break;
 		case "trapsell":
-			trap -= 1;
-			score += 125;
+			if(trap >= 1){
+				trap -= 1;
+				score += 125;
+			}
 			break;
 		case "catbuy":
 			if(score >= 1000) {
@@ -127,8 +160,10 @@ function shop(sel) {
 			}
 			break;
 		case "catsell":
-			cat -= 1;
-			score += 500;
+			if(cat >= 1){
+				cat -= 1;
+				score += 500;
+			}
 			break;
 		case "poisonbuy":
 			if(score >= 1500) {
@@ -141,8 +176,10 @@ function shop(sel) {
 			}
 			break;
 		case "poisonsell":
-			poison -= 1;
-			score += 750;
+			if(poison >= 1){
+				poison -= 1;
+				score += 750;
+			}
 			break;
 		case "catcherbuy":
 			if(score >= 5000) {
@@ -155,8 +192,10 @@ function shop(sel) {
 			}
 			break;
 		case "catchersell":
-			catcher -= 1;
-			score += 2500;
+			if(catcher >= 1){
+				catcher -= 1;
+				score += 2500;
+			}
 			break;
 		case "factorybuy":
 			if(score >= 10000) {
@@ -169,8 +208,10 @@ function shop(sel) {
 			}
 			break;
 		case "factorysell":
-			factory -= 1;
-			score += 5000;
+			if(factory >= 1){
+				factory -= 1;
+				score += 5000;
+			}
 			break;
 		case "planetbuy":
 			if(score >= 50000) {
@@ -184,8 +225,10 @@ function shop(sel) {
 			}
 			break;
 		case "planetsell":
-			planet -= 1;
-			score += 25000;
+			if(planet >= 1){
+				planet -= 1;
+				score += 25000;
+			}
 			break;
 		case "jesusbuy":
 			if(score >= 25000000) {
@@ -198,8 +241,10 @@ function shop(sel) {
 			}
 			break;
 		case "jesussell":
-			jesus -= 1;
-			score += 12500000;
+			if(jesus >= 1){
+				jesus -= 1;
+				score += 12500000;
+			}
 			break;
 	}
 	update_values(); 
@@ -273,16 +318,16 @@ function loadCookies() {
 
 
 // dispense bonuses every second
-setInterval(bonus, 1000);
+setInterval(bonus, 100);
 function bonus() {
-	score+=chef*1;
-	score+=trap*2.5;
-	score+=cat*10;
-	score+=poison*20;
-	score+=catcher*50;
-	score+=factory*125;
-	score+=planet*750;
-	score+=jesus*380000;
+	score+=chef*0.1;
+	score+=trap*0.2;
+	score+=cat*1;
+	score+=poison*2;
+	score+=catcher*5;
+	score+=factory*12.5;
+	score+=planet*75;
+	score+=jesus*3800;
 	update_values(); 
 	saveCookies();
 }
