@@ -13,6 +13,7 @@ var planet = 0;
 var jesus = 0;
 
 window.onload = function() {
+	"use strict";
 	loadCookies();
 	update_values();
 	// add event listeners
@@ -77,6 +78,7 @@ window.onload = function() {
 };
 
 function update_values() {
+	"use strict";
 	document.getElementById("score").value=score;
 	document.getElementById("grill").value=grill;   
 	document.getElementById("chef").value=chef;  
@@ -90,6 +92,7 @@ function update_values() {
 }
 
 function cookie_clicker() {
+	"use strict";
 	if( grill >= 0 ) {
 		score+= 1+grill;
 	} else {
@@ -100,6 +103,7 @@ function cookie_clicker() {
 
 // for buying items
 function shop(sel) {
+	"use strict";
 	switch(sel) {
 		case "grillbuy":
 			if( score >= 100 ) {
@@ -159,7 +163,7 @@ function shop(sel) {
 				alert( "You don't have enough rats!");
 			}
 			break;
-		case "catsell":
+		case "catssell":
 			if(cat >= 1){
 				cat -= 1;
 				score += 500;
@@ -251,6 +255,7 @@ function shop(sel) {
 }
 
 function saveCookies() {
+	"use strict";
 	var exdays = 100000;
 	var date = new Date();
 	date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -268,6 +273,7 @@ function saveCookies() {
 }
 
 function getCookie(cname) {
+	"use strict";
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
@@ -284,6 +290,7 @@ function getCookie(cname) {
 }
 
 function loadCookies() {
+	"use strict";
 	if( getCookie("score") !== "" ) {
 		score = Number(getCookie("score"));
 	}
@@ -318,21 +325,23 @@ function loadCookies() {
 
 
 // dispense bonuses every second
-setInterval(bonus, 100);
+setInterval(bonus, 1000);
 function bonus() {
-	score+=chef*0.1;
-	score+=trap*0.2;
-	score+=cat*1;
-	score+=poison*2;
-	score+=catcher*5;
-	score+=factory*12.5;
-	score+=planet*75;
-	score+=jesus*3800;
+	"use strict";
+	score+=chef*1;
+	score+=trap*2;
+	score+=cat*10;
+	score+=poison*20;
+	score+=catcher*50;
+	score+=factory*125;
+	score+=planet*750;
+	score+=jesus*10000;
 	update_values(); 
 	saveCookies();
 }
 
 function clear_score() {
+	"use strict";
 	score = 0;
 	grill = 0;
 	chef = 0;
