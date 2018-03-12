@@ -1,36 +1,44 @@
 @charset "UTF-8";
 /* CSS Document */
 
+#store {
+	background-color: white;
+	float: left;
+}
+
+#rightCol {
+	float: right;
+}
+
+#leftCol {
+	float: left;
+}
+
 body {
 	background-image: url("blue.jpg");
-	background-size:2400px;
+	background-size:2000px;
+	background-repeat: no-repeat;
 }
 #score {
 	text-align: right;
 }
 
 h1 {
-	color: #760001;
+	color: red;
 	
 	}
 
 #store {
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: fantasy; 
 
 	color: red;
 }
  
 
-h2.top {
-	margin-top: -100px;
-}
 
-p.top {
-	margin-top: -100px;
-}
 /* stats text align, fonts, and color*/
 #stats {
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: fantasy;
 	color: red;
 	
 
@@ -38,6 +46,6 @@ p.top {
 }
 /* wrapper color and fonts*/
 #wrapper {
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: cursive;
 	color: red;
 }
