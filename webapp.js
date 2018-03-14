@@ -1,6 +1,6 @@
 // JavaScript Document
 
-// global variables
+// Global Variables
 var score= 0;
 var grill = 0;
 var chef = 0;
@@ -12,6 +12,7 @@ var factory = 0;
 var planet = 0;
 var jesus = 0;
 
+// Setup
 window.onload = function() {
 	"use strict";
 	loadCookies();
@@ -77,9 +78,10 @@ window.onload = function() {
 
 };
 
+// Update Values
 function update_values() {
 	"use strict";
-	document.getElementById("score").value=score;
+	document.getElementById("score").value=Math.floor(score);
 	document.getElementById("grill").value=grill;   
 	document.getElementById("chef").value=chef;  
 	document.getElementById("trap").value=trap;     
@@ -91,6 +93,7 @@ function update_values() {
 	document.getElementById("jesus").value=jesus;
 }
 
+// Main Button
 function cookie_clicker() {
 	"use strict";
 	if( grill >= 0 ) {
@@ -101,7 +104,7 @@ function cookie_clicker() {
 	update_values();                           
 }
 
-// for buying items
+// Buying Items
 function shop(sel) {
 	"use strict";
 	switch(sel) {
@@ -122,8 +125,8 @@ function shop(sel) {
 			}
 			break;
 		case "chefbuy":
-			if(score >= 150) {
-				score-=150;
+			if(score >= 200) {
+				score-=200;
 				chef++;	
 				update_values(); 
 			}
@@ -134,12 +137,12 @@ function shop(sel) {
 		case "chefsell":
 			if(chef >= 1){
 				chef -= 1;
-				score += 75;
+				score += 100;
 			}
 			break;
 		case "trapbuy":
-			if(score >= 250) {
-				score-=250;
+			if(score >= 875) {
+				score-=875;
 				trap++;
 				update_values(); 
 			}
@@ -150,12 +153,12 @@ function shop(sel) {
 		case "trapsell":
 			if(trap >= 1){
 				trap -= 1;
-				score += 125;
+				score += 438;
 			}
 			break;
 		case "catbuy":
-			if(score >= 1000) {
-				score-=1000;
+			if(score >= 1500) {
+				score-=1500;
 				cat++;	
 				update_values(); 
 			}
@@ -166,12 +169,12 @@ function shop(sel) {
 		case "catssell":
 			if(cat >= 1){
 				cat -= 1;
-				score += 500;
+				score += 750;
 			}
 			break;
 		case "poisonbuy":
-			if(score >= 1500) {
-				score-=1500;
+			if(score >= 2500) {
+				score-=2500;
 				poison++;	
 				update_values(); 
 			}
@@ -182,7 +185,7 @@ function shop(sel) {
 		case "poisonsell":
 			if(poison >= 1){
 				poison -= 1;
-				score += 750;
+				score += 1250;
 			}
 			break;
 		case "catcherbuy":
@@ -202,8 +205,8 @@ function shop(sel) {
 			}
 			break;
 		case "factorybuy":
-			if(score >= 10000) {
-				score -= 10000;
+			if(score >= 7500) {
+				score -= 7500;
 				factory++;	
 				update_values(); 
 			}
@@ -214,7 +217,7 @@ function shop(sel) {
 		case "factorysell":
 			if(factory >= 1){
 				factory -= 1;
-				score += 5000;
+				score += 3750;
 			}
 			break;
 		case "planetbuy":
@@ -254,6 +257,7 @@ function shop(sel) {
 	update_values(); 
 }
 
+// Save Cookies
 function saveCookies() {
 	"use strict";
 	var exdays = 100000;
@@ -272,6 +276,7 @@ function saveCookies() {
 	document.cookie = "jesus=" + jesus + ";" + expires;
 }
 
+// Recall Cookies
 function getCookie(cname) {
 	"use strict";
     var name = cname + "=";
@@ -289,6 +294,7 @@ function getCookie(cname) {
     return "";
 }
 
+// Overwrite Current Game with Saved Cookies
 function loadCookies() {
 	"use strict";
 	if( getCookie("score") !== "" ) {
@@ -324,22 +330,23 @@ function loadCookies() {
 }
 
 
-// dispense bonuses every second
-setInterval(bonus, 1000);
+// Add Rats From Items
+setInterval(bonus, 10);
 function bonus() {
 	"use strict";
-	score+=chef*1;
-	score+=trap*2;
-	score+=cat*10;
-	score+=poison*20;
-	score+=catcher*50;
-	score+=factory*125;
-	score+=planet*750;
+	score+=chef*0.01;
+	score+=trap*0.05;
+	score+=cat*0.1;
+	score+=poison*0.2;
+	score+=catcher*0.5;
+	score+=factory*1;
+	score+=planet*10;
 	score+=jesus*10000;
 	update_values(); 
 	saveCookies();
 }
 
+// Reset
 function clear_score() {
 	"use strict";
 	score = 0;
